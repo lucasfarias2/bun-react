@@ -1,0 +1,22 @@
+{
+  "name": "bun-react",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rm -rf build && bun build ./react/App.tsx --outdir ./dist && cp ./react/index.html ./dist/index.html",
+    "dev":"bun build ./react/App.tsx --outdir ./dist --watch"
+  },
+  "dependencies": {
+    "elysia": "^0.7.30",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
