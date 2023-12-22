@@ -3,8 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "build": "rm -rf build && bun build ./react/App.tsx --outdir ./dist && cp ./react/index.html ./dist/index.html",
-    "dev":"bun build ./react/App.tsx --outdir ./dist --watch"
+    "build": "rm -rf build && bun build ./src/entry.ts --outdir ./dist && cp ./react/index.html ./dist/index.html",
+    "dev":"bun build ./src/entry.ts --outdir ./dist --watch --splitting --minify"
   },
   "dependencies": {
     "elysia": "^0.7.30",
