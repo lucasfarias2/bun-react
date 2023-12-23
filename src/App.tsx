@@ -1,16 +1,18 @@
-const Home = () => {
+import Title from "./Title";
+
+export default function App() {
   return (
     <div>
-      React app
-      <button
-        onClick={() => {
-          alert();
-        }}
-      >
-        Testtest
-      </button>
+      <Title />
+      <div>
+        <button
+          onClick={() => {
+            console.log("the best asd");
+          }}
+        >
+          Test
+        </button>
+      </div>
     </div>
   );
-};
-
-export default Home;
+}

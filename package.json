@@ -3,8 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "build": "rm -rf build && bun build ./src/entry.ts --outdir ./dist && cp ./react/index.html ./dist/index.html",
-    "dev":"bun build ./src/entry.ts --outdir ./dist --watch --splitting --minify"
+    "build": "BUN_ENV=production rm -rf build && bun build ./src/entry.ts --outdir ./dist --splitting --minify",
+    "watch": "BUN_ENV=development rm -rf dist && bun builder.ts",
+    "dev": "BUN_ENV=development bun --hot index.ts --inspect"
   },
   "dependencies": {
     "elysia": "^0.7.30",
