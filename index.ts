@@ -3,7 +3,7 @@ import App from "./src/App";
 import React from "react";
 
 Bun.serve({
-  port: 8080,
+  port: Bun.env.PORT,
   async fetch(request) {
     console.log("Bun", Bun.env.BUN_ENV);
     const url = new URL(request.url);

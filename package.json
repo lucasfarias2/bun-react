@@ -3,6 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
+    "start": "bun index.ts",
     "build": "BUN_ENV=production rm -rf build && bun build ./src/entry.ts --outdir ./dist --splitting --minify",
     "watch": "BUN_ENV=development rm -rf dist && bun builder.ts",
     "dev": "BUN_ENV=development bun --hot index.ts --inspect"
