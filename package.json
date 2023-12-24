@@ -3,20 +3,38 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "start": "bun index.ts",
-    "build": "BUN_ENV=production rm -rf build && bun build ./src/entry.ts --outdir ./dist --splitting --minify",
-    "watch": "BUN_ENV=development rm -rf dist && bun builder.ts",
-    "dev": "BUN_ENV=development bun --hot index.ts --inspect"
+    "start": "BUN_ENV=production bun index.ts",
+    "build": "rm -rf ./public/dist && BUN_ENV=production bun builder.ts",
+    "watch": "rm -rf ./public/dist && BUN_ENV=development bun builder.ts",
+    "dev": "BUN_ENV=development bun --hot index.ts --inspect",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --quiet",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
+    "@elysiajs/static": "^0.8.0",
     "elysia": "^0.7.30",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "bun-types": "latest"
+    "@typescript-eslint/eslint-plugin": "latest",
+    "bun-types": "latest",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "tailwindcss": "^3.4.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

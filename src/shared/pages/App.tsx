@@ -1,4 +1,4 @@
-import Title from "./Title";
+import Title from '@/shared/components/Title';
 
 export default function App() {
   return (
@@ -7,10 +7,10 @@ export default function App() {
       <div>
         <button
           onClick={() => {
-            console.log("the best asd");
+            alert('the best asd');
           }}
         >
-          Test
+          Test a
         </button>
       </div>
     </div>

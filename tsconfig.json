@@ -13,13 +13,15 @@
     "downlevelIteration": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
+    "types": ["bun-types"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "dist", "build", "public"]
+  "exclude": ["node_modules", "public/dist", "build", "public"]
 }
