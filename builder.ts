@@ -6,6 +6,9 @@ const entrypoints = ['./src/client/entries/app.ts'];
 const outdir = './public/dist';
 
 if (isDev) {
+  /**
+   * ONLY IN DEVELOPMENT ENVIRONMENT
+   */
   const devConfig = {
     entrypoints,
     outdir,
@@ -29,9 +32,11 @@ if (isDev) {
       message(ws) {},
       async open(ws) {
         try {
-          const distWatcher = watch(`${import.meta.dir}/dist`, { recursive: true }, (event, filename) => {
+          const distWatcher = watch(`${import.meta.dir}/public/dist`, { recursive: true }, (event, filename) => {
               console.log(`Dist folder: File ${event} ${filename}`);
-              ws.send('reload');
+              if ((filename as string)?.endsWith('.js')) {
+                ws.send("reload");
+              }
             }
           );
         } catch {
@@ -56,6 +61,10 @@ if (isDev) {
     `Builder watching and WebSocket listening at ws://localhost:${WSPORT}/ws...`
   );
 } else {
+    /**
+   * ONLY IN PRODUCTION ENVIRONMENT
+   */
+
   await Bun.build({
     entrypoints,
     outdir,

@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "BUN_ENV=production bun index.ts",
+    "type-check": "tsc -p tsconfig.json",
     "build": "rm -rf ./public/dist && BUN_ENV=production bun builder.ts",
     "watch": "rm -rf ./public/dist && BUN_ENV=development bun builder.ts",
     "dev": "BUN_ENV=development bun --hot index.ts --inspect",

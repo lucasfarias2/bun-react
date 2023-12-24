@@ -23,5 +23,5 @@
     }
   },
   "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "public/dist", "build", "public"]
+  "exclude": ["node_modules", "public"]
 }

@@ -1,16 +1,20 @@
 import Title from '@/shared/components/Title';
+import { useState } from 'react';
 
 export default function App() {
+  const [count, setCount] = useState(0);
+  
   return (
     <div>
       <Title />
       <div>
+        <div>{count}</div>
         <button
           onClick={() => {
-            alert('the best asd');
+            setCount(count + 1);
           }}
         >
-          Test a
+          Increment count
         </button>
       </div>
     </div>

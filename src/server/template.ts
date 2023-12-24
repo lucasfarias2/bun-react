@@ -37,8 +37,8 @@ export default function getTemplate(title: string, bundleName: string) {
         ${isDev ? renderWsBuilderConnectionScript() : ''}
       </head>
       <body>
-        <div id="rosot"><!-- react --></div>
-        <script src="/public/dist/${bundleName}.js"></script>
+        <div id="root"><!-- react --></div>
+        <script id="bundle" src="/public/dist/${bundleName}.js"></script>
       </body>
     </html>
   `;
