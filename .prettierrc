@@ -8,6 +8,6 @@
   "importOrderSortSpecifiers": true,
   "importOrderGroupNamespaceSpecifiers": true,
   "importOrderCaseInsensitive": true,
-  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwind"],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "pluginSearchDirs": false
 }

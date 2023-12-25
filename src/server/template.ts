@@ -1,28 +1,17 @@
 const isDev = Bun.env.BUN_ENV === 'development';
 
-function renderWsBuilderConnectionScript() {
+function renderHeadScripts(bundleName: string) {
   return `
-  <script>
-    const devServerSocket = new WebSocket("ws://localhost:4321/ws")
-
-    devServerSocket.addEventListener("open", () => {
-      console.log("Connected ws to builder server");
-    });
-
-    devServerSocket.addEventListener("message", (event) => {
-      console.log("Received ws message from builder server", event.data);
-
-      if (event.data === "reload") {
-        fetch(window.location.pathname).then(response => response.text()).then(data => {
-          document.documentElement.innerHTML = data;
-        });
-      }
-    });
-
-    devServerSocket.addEventListener("close", () => {
-      console.log("Disconnected ws from builder server");
-    });
-  </script>
+    <script type="module">
+              import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+              RefreshRuntime.injectIntoGlobalHook(window)
+              window.$RefreshReg$ = () => {}
+              window.$RefreshSig$ = () => (type) => type
+              window.__vite_plugin_react_preamble_installed__ = true
+    </script>
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/src/client/entries/${bundleName}.ts"></script>
+    <link rel="stylesheet" href="http://localhost:5173/src/client/entries/${bundleName}.css" />
   `;
 }
 
@@ -34,11 +23,11 @@ export default function getTemplate(title: string, bundleName: string) {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>${title}</title>
-        ${isDev ? renderWsBuilderConnectionScript() : ''}
+        ${isDev ? renderHeadScripts(bundleName) : ''}
       </head>
       <body>
         <div id="root"><!-- react --></div>
-        <script id="bundle" src="/public/dist/${bundleName}.js"></script>
+        <!-- <script id="bundle" src="/public/dist/${bundleName}.js"></script> -->
       </body>
     </html>
   `;
