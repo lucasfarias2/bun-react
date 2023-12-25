@@ -23,6 +23,6 @@
       "#/*": ["./dist/*"]
     }
   },
-  "include": ["./**/*.ts", "./**/*.tsx", "postcss.config.js"],
-  "exclude": ["node_modules", "public"]
+  "include": ["./**/*.ts", "./**/*.tsx", "tailwind.config.js"],
+  "exclude": ["node_modules", "public", "dist", "postcss.config.js"]
 }

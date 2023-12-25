@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #fafafa;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Gabarito', sans-serif;
+}
