@@ -8,10 +8,41 @@ To install dependencies:
 bun install
 ```
 
-To run:
+## Development
+
+1. Start the development server:
 
 ```bash
-bun run index.ts
+bun dev
+```
+
+2. Start Vite watch:
+
+```bash
+bun watch
+```
+
+## Production
+
+1. Build the project:
+
+```bash
+bun dist
+```
+
+2. Start the production server:
+
+```bash
+bun start
+```
+
+## Tools
+
+```bash
+bun type-check // tsc to check types, used only before production build
+bun lint // eslint
+bun format:check // prettier only check
+bun format // prettier format
 ```
 
 This project was created using `bun init` in bun v1.0.18. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

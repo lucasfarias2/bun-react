@@ -6,7 +6,7 @@
     "start": "BUN_ENV=production bun index.ts",
     "dev": "BUN_ENV=development bun --hot index.ts --inspect",
     "watch": "vite",
-    "dist": "vite build",
+    "dist": "bun type-check && vite build",
     "type-check": "tsc -p tsconfig.json",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --quiet",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
