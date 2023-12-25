@@ -6,10 +6,11 @@ const isDev = process.env.BUN_ENV === 'development';
 
 export default defineConfig({
   plugins: [pluginReact(), tsconfigPaths()],
+  publicDir: './static',
   build: {
     outDir: './dist',
     emptyOutDir: true,
-    manifest: !isDev,
+    manifest: true,
     minify: !isDev,
     cssMinify: !isDev,
     rollupOptions: {

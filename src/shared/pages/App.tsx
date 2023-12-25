@@ -10,21 +10,21 @@ export default function App() {
         <img
           src="https://bun.sh/logo.svg"
           alt="Bun logo"
-          className="w-24 mx-auto mb-4 transition duration-200 ease-in-out hover:scale-125 hover:rotate-12"
+          className="mx-auto mb-4 w-24 transition duration-200 ease-in-out hover:rotate-12 hover:scale-125"
         />
         <Title />
-        <div className="flex items-center justify-center mb-12">
+        <div className="mb-12 flex items-center justify-center">
           <button
-            className="bg-rose-500 px-4 py-2 rounded-3xl text-white text-sm font-medium shadow hover:opacity-90"
+            className="rounded-3xl bg-rose-500 px-4 py-2 text-sm font-medium text-white shadow hover:opacity-90"
             onClick={() => {
               setCount(count - 1);
             }}
           >
             -
           </button>
-          <div className="bg-white py-2 px-4 border rounded-full inline-block font-medium shadow-sm mx-2">{count}</div>
+          <div className="mx-2 inline-block rounded-full border bg-white px-4 py-2 font-medium shadow-sm">{count}</div>
           <button
-            className="bg-green-500 px-4 py-2 rounded-3xl text-white text-sm font-medium shadow hover:opacity-90"
+            className="rounded-3xl bg-green-500 px-4 py-2 text-sm font-medium text-white shadow hover:opacity-90"
             onClick={() => {
               setCount(count + 1);
             }}
@@ -32,8 +32,8 @@ export default function App() {
             +
           </button>
         </div>
-        <button className="bg-black px-6 py-3 rounded-3xl text-white text-sm font-medium shadow flex items-center mx-auto hover:bg-black/80 border border-white">
-          <img src="https://i.imgur.com/RpZl3K5.png" alt="Packlify logo" className="w-5 inline-block mr-2" />
+        <button className="mx-auto flex items-center rounded-3xl border border-white bg-black px-6 py-3 text-sm font-medium text-white shadow hover:bg-black/80">
+          <img src="https://i.imgur.com/RpZl3K5.png" alt="Packlify logo" className="mr-2 inline-block w-5" />
           Deploy with Packlify
         </button>
       </div>

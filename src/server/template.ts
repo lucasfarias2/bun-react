@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore as it's an expected error
 import manifest from '#/.vite/manifest.json';
 
 const isDev = Bun.env.BUN_ENV === 'development';

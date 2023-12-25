@@ -3,11 +3,11 @@ import Elysia from 'elysia';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import getTemplate from '@/server/template';
-import App from './src/shared/pages/App';
+import App from '@/shared/pages/App';
 
 const app = new Elysia();
 
-const PORT = Bun.env.PORT || 8080;
+const PORT = Bun.env.PORT || 3000;
 
 app.use(staticPlugin({ assets: './public', prefix: '/public' }));
 app.use(staticPlugin({ assets: './dist', prefix: '/dist' }));

@@ -11,10 +11,11 @@
 
 ## Installation
 
-To install dependencies:
+To install dependencies and build the project first:
 
 ```bash
-bun install
+bun install # install dependencies
+bun dist # build the project
 ```
 
 ## Development

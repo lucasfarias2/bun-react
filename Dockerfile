@@ -19,7 +19,7 @@ ENV BUN_ENV=production
 ENV PORT=3000
 
 # Build the project
-RUN bun run build
+RUN bun run dist
 
 # Expose the port the app runs on
 EXPOSE 3000
