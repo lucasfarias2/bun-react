@@ -1,15 +1,16 @@
-import { renderToString } from 'react-dom/server';
-import App from './src/shared/pages/App';
-import React from 'react';
-import getTemplate from '@/server/template';
-import Elysia from 'elysia';
 import { staticPlugin } from '@elysiajs/static';
+import Elysia from 'elysia';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import getTemplate from '@/server/template';
+import App from './src/shared/pages/App';
 
 const app = new Elysia();
 
 const PORT = Bun.env.PORT || 8080;
 
-app.use(staticPlugin())
+app.use(staticPlugin({ assets: './public', prefix: '/public' }));
+app.use(staticPlugin({ assets: './dist', prefix: '/dist' }));
 
 app.get('*', () => {
   const stream = renderToString(React.createElement(App));
@@ -22,5 +23,5 @@ app.get('*', () => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+  console.log(`Server running at http://localhost:${PORT}...`);
 });

@@ -5,7 +5,7 @@ export default function App() {
   const [count, setCount] = useState(0);
   
   return (
-    <div>
+    <div className="p-4">
       <Title />
       <div>
         <div>{count}</div>

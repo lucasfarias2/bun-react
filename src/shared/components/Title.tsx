@@ -1,5 +1,5 @@
 const Title = () => {
-  return <h1 className="w-1 border-r bg-black p-8 m-2">React app</h1>;
+  return <h1 className="text-lg">React app</h1>;
 }
 
 export default Title;

@@ -19,9 +19,10 @@
     "allowJs": true,
     "types": ["bun-types"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#/*": ["./dist/*"]
     }
   },
-  "include": ["./**/*.ts", "./**/*.tsx"],
+  "include": ["./**/*.ts", "./**/*.tsx", "postcss.config.js"],
   "exclude": ["node_modules", "public"]
 }
